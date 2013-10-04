@@ -96,7 +96,7 @@
 //                           options: (const CBLManagerOptions*)options
 //                             error: (NSError**)outError;
 
-// TODO: Needed?
+// NOTE: Defined in Module
 //+ (NSString*) defaultDirectory;
 
 -(void)close:(id)args
