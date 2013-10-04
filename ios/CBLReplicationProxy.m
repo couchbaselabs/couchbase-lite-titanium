@@ -352,6 +352,8 @@
 
 -(void)dealloc
 {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:kCBLReplicationChangeNotification object:_delegate];
+    
     [_delegate release];
     [_thread release];
     

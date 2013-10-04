@@ -294,6 +294,8 @@
         [_delegate addObserver:self forKeyPath:@"rows" options:0 context:NULL];
     }
     
+    [super _hasListeners:nil];
+    
     return self;
 }
 
@@ -361,6 +363,8 @@
 
 -(void)dealloc
 {
+    [_delegate removeObserver:self forKeyPath:@"rows"];
+    
     [_delegate release];
     [_thread release];
     [_rowsChangeListeners release];
