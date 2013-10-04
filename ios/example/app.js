@@ -6,7 +6,7 @@
 
 // open a single window
 var win = Ti.UI.createWindow({
-	backgroundColor:'white'
+    backgroundColor:'white'
 });
 var label = Ti.UI.createLabel();
 win.add(label);
@@ -21,9 +21,9 @@ var database = manager.createDatabase("checkers");
 //database.deleteDatabase();
 
 database.addEventListener(database.CHANGE_EVENT, function(e) {
-	var query = e.source.queryAllDocuments;
-	
-	label.text = "Documents: " + query.rows.count;
+    var query = e.source.queryAllDocuments;
+    
+    label.text = "Documents: " + query.rows.count;
 });
 
 var userId = "test1";
@@ -33,21 +33,21 @@ var voteDocId = "vote:" + userId;
 // Replicators
 var replications = database.replicate(SYNC_URL, true);
 for (var i=0; i<replications.length; i++) {
-	var replication = replications[i];
-	
-	replication.isContinuous = true;
-	// NOTE: There are issues w/ persistent=true during cold-start.
+    var replication = replications[i];
+    
+    replication.isContinuous = true;
+    // NOTE: There are issues w/ persistent=true during cold-start.
     replication.isPersistent = true;
     
     if(replication.isPull) {
         replication.filter = "sync_gateway/bychannel";
         replication.queryParams = {"channels":"game"};
     } else {
-    	database.defineFilter("pushItems", function(properties, params) {
-    		return (properties._id == userDocId || properties._id == voteDocId);
-		});
-		
-		replication.filter = "pushItems";
+        database.defineFilter("pushItems", function(properties, params) {
+            return (properties._id == userDocId || properties._id == voteDocId);
+        });
+        
+        replication.filter = "pushItems";
     }
 }
 
@@ -55,26 +55,26 @@ for (var i=0; i<replications.length; i++) {
 var userDoc = database.getDocument(userDocId);
 if (!userDoc.currentRevision) userDoc.putProperties({});
 userDoc.update(function(newRevision) {
-	newRevision.putProperties({
-		"team":0
-	});
-	
-	return true;
+    newRevision.putProperties({
+        "team":0
+    });
+    
+    return true;
 });
 
 // Vote
 var voteDoc = database.getDocument(voteDocId);
 if (!voteDoc.currentRevision) voteDoc.putProperties({});
 voteDoc.update(function(newRevision) {
-	newRevision.putProperties({
-		"game":1,
-		"turn":1,
-		"team":0,
-		"piece":7,
-		"locations":[11,15]
-	});
-	
-	return true;
+    newRevision.putProperties({
+        "game":1,
+        "turn":1,
+        "team":0,
+        "piece":7,
+        "locations":[11,15]
+    });
+    
+    return true;
 });
 
 // Create view for games by start time.
@@ -82,7 +82,7 @@ var gamesByStartTime = database.getView("gamesByStartTime");
 if (!gamesByStartTime.map) {
     gamesByStartTime.setMapAndReduce(function(doc, emitter) {
         if (doc["_id"].indexOf("game:") == 0 && doc.startTime) {
-        	emitter.emit(doc.startTime, doc);
+            emitter.emit(doc.startTime, doc);
         }
     }, null, "1.0");
 }
@@ -91,5 +91,5 @@ var liveQuery = gamesByStartTime.createQuery().toLiveQuery();
 liveQuery.limit = 1;
 liveQuery.descending = true;
 liveQuery.addEventListener(liveQuery.CHANGE_EVENT, function(e) {
-	Ti.API.info("### liveQuery.change: " + e.source + ", " + e.source.rows + "[" + e.source.rows.count + "]");
+    Ti.API.info("### liveQuery.change: " + e.source + ", " + e.source.rows + "[" + e.source.rows.count + "]");
 });
