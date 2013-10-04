@@ -1,0 +1,569 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		24416B8111C4CA220047AFDD /* Build & Test */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 24416B8A11C4CA520047AFDD /* Build configuration list for PBXAggregateTarget "Build & Test" */;
+			buildPhases = (
+				24416B8011C4CA220047AFDD /* ShellScript */,
+			);
+			dependencies = (
+				24416B8511C4CA280047AFDD /* PBXTargetDependency */,
+			);
+			name = "Build & Test";
+			productName = "Build & test";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		A3BBBF9517F7866F000EE582 /* CBLManagerProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = A3BBBF8517F7866F000EE582 /* CBLManagerProxy.h */; };
+		A3BBBF9617F7866F000EE582 /* CBLManagerProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3BBBF8617F7866F000EE582 /* CBLManagerProxy.m */; };
+		A3BBBF9717F7866F000EE582 /* CBLDatabaseProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = A3BBBF8717F7866F000EE582 /* CBLDatabaseProxy.h */; };
+		A3BBBF9817F7866F000EE582 /* CBLDatabaseProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3BBBF8817F7866F000EE582 /* CBLDatabaseProxy.m */; };
+		A3BBBF9917F7866F000EE582 /* CBLDocumentProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = A3BBBF8917F7866F000EE582 /* CBLDocumentProxy.h */; };
+		A3BBBF9A17F7866F000EE582 /* CBLDocumentProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3BBBF8A17F7866F000EE582 /* CBLDocumentProxy.m */; };
+		A3BBBF9B17F7866F000EE582 /* CBLRevisionProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = A3BBBF8B17F7866F000EE582 /* CBLRevisionProxy.h */; };
+		A3BBBF9C17F7866F000EE582 /* CBLRevisionProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3BBBF8C17F7866F000EE582 /* CBLRevisionProxy.m */; };
+		A3BBBF9D17F7866F000EE582 /* CBLAttachmentProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = A3BBBF8D17F7866F000EE582 /* CBLAttachmentProxy.h */; };
+		A3BBBF9E17F7866F000EE582 /* CBLAttachmentProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3BBBF8E17F7866F000EE582 /* CBLAttachmentProxy.m */; };
+		A3BBBF9F17F7866F000EE582 /* CBLViewProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = A3BBBF8F17F7866F000EE582 /* CBLViewProxy.h */; };
+		A3BBBFA017F7866F000EE582 /* CBLViewProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3BBBF9017F7866F000EE582 /* CBLViewProxy.m */; };
+		A3BBBFA117F7866F000EE582 /* CBLQueryProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = A3BBBF9117F7866F000EE582 /* CBLQueryProxy.h */; };
+		A3BBBFA217F7866F000EE582 /* CBLQueryProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3BBBF9217F7866F000EE582 /* CBLQueryProxy.m */; };
+		A3BBBFA317F7866F000EE582 /* CBLReplicationProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = A3BBBF9317F7866F000EE582 /* CBLReplicationProxy.h */; };
+		A3BBBFA417F7866F000EE582 /* CBLReplicationProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3BBBF9417F7866F000EE582 /* CBLReplicationProxy.m */; };
+		A3BBBFA717F78678000EE582 /* CBLModelProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = A3BBBFA517F78678000EE582 /* CBLModelProxy.h */; };
+		A3BBBFA817F78678000EE582 /* CBLModelProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3BBBFA617F78678000EE582 /* CBLModelProxy.m */; };
+		A3BBBFAF17F78681000EE582 /* NSErrorProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = A3BBBFA917F78681000EE582 /* NSErrorProxy.h */; };
+		A3BBBFB017F78681000EE582 /* NSErrorProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3BBBFAA17F78681000EE582 /* NSErrorProxy.m */; };
+		A3BBBFB117F78681000EE582 /* NSURLProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = A3BBBFAB17F78681000EE582 /* NSURLProxy.h */; };
+		A3BBBFB217F78681000EE582 /* NSURLProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3BBBFAC17F78681000EE582 /* NSURLProxy.m */; };
+		A3BBBFB317F78681000EE582 /* NSURLCredentialProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = A3BBBFAD17F78681000EE582 /* NSURLCredentialProxy.h */; };
+		A3BBBFB417F78681000EE582 /* NSURLCredentialProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3BBBFAE17F78681000EE582 /* NSURLCredentialProxy.m */; };
+		A3BBD56517FE92E7000EE394 /* CouchbaseLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3BBD56417FE92E7000EE394 /* CouchbaseLite.framework */; };
+		A3BBD56A17FE9902000EE394 /* ComCouchbaseCblModule.h in Headers */ = {isa = PBXBuildFile; fileRef = A3BBD56617FE9902000EE394 /* ComCouchbaseCblModule.h */; };
+		A3BBD56B17FE9902000EE394 /* ComCouchbaseCblModule.m in Sources */ = {isa = PBXBuildFile; fileRef = A3BBD56717FE9902000EE394 /* ComCouchbaseCblModule.m */; };
+		A3BBD56C17FE9902000EE394 /* ComCouchbaseCblModuleAssets.h in Headers */ = {isa = PBXBuildFile; fileRef = A3BBD56817FE9902000EE394 /* ComCouchbaseCblModuleAssets.h */; };
+		A3BBD56D17FE9902000EE394 /* ComCouchbaseCblModuleAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = A3BBD56917FE9902000EE394 /* ComCouchbaseCblModuleAssets.m */; };
+		A3FE1E8C17F7A6E900789421 /* TitaniumUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = A3FE1E8A17F7A6E900789421 /* TitaniumUtils.h */; };
+		A3FE1E8D17F7A6E900789421 /* TitaniumUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FE1E8B17F7A6E900789421 /* TitaniumUtils.m */; };
+		A3FE1E9417FAB5C500789421 /* ThreadUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = A3FE1E9217FAB5C500789421 /* ThreadUtils.h */; };
+		A3FE1E9517FAB5C500789421 /* ThreadUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A3FE1E9317FAB5C500789421 /* ThreadUtils.m */; };
+		AA747D9F0F9514B9006C5449 /* ComCouchbaseCbl_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = AA747D9E0F9514B9006C5449 /* ComCouchbaseCbl_Prefix.pch */; };
+		AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AACBBE490F95108600F1A2B1 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		24416B8411C4CA280047AFDD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = CouchbaseLiteTitanium;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		24DD6D1B1134B66800162E58 /* titanium.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = titanium.xcconfig; sourceTree = "<group>"; };
+		A3BBBF8517F7866F000EE582 /* CBLManagerProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBLManagerProxy.h; sourceTree = "<group>"; };
+		A3BBBF8617F7866F000EE582 /* CBLManagerProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBLManagerProxy.m; sourceTree = "<group>"; };
+		A3BBBF8717F7866F000EE582 /* CBLDatabaseProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBLDatabaseProxy.h; sourceTree = "<group>"; };
+		A3BBBF8817F7866F000EE582 /* CBLDatabaseProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBLDatabaseProxy.m; sourceTree = "<group>"; };
+		A3BBBF8917F7866F000EE582 /* CBLDocumentProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBLDocumentProxy.h; sourceTree = "<group>"; };
+		A3BBBF8A17F7866F000EE582 /* CBLDocumentProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBLDocumentProxy.m; sourceTree = "<group>"; };
+		A3BBBF8B17F7866F000EE582 /* CBLRevisionProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBLRevisionProxy.h; sourceTree = "<group>"; };
+		A3BBBF8C17F7866F000EE582 /* CBLRevisionProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBLRevisionProxy.m; sourceTree = "<group>"; };
+		A3BBBF8D17F7866F000EE582 /* CBLAttachmentProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBLAttachmentProxy.h; sourceTree = "<group>"; };
+		A3BBBF8E17F7866F000EE582 /* CBLAttachmentProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBLAttachmentProxy.m; sourceTree = "<group>"; };
+		A3BBBF8F17F7866F000EE582 /* CBLViewProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBLViewProxy.h; sourceTree = "<group>"; };
+		A3BBBF9017F7866F000EE582 /* CBLViewProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBLViewProxy.m; sourceTree = "<group>"; };
+		A3BBBF9117F7866F000EE582 /* CBLQueryProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBLQueryProxy.h; sourceTree = "<group>"; };
+		A3BBBF9217F7866F000EE582 /* CBLQueryProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBLQueryProxy.m; sourceTree = "<group>"; };
+		A3BBBF9317F7866F000EE582 /* CBLReplicationProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBLReplicationProxy.h; sourceTree = "<group>"; };
+		A3BBBF9417F7866F000EE582 /* CBLReplicationProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBLReplicationProxy.m; sourceTree = "<group>"; };
+		A3BBBFA517F78678000EE582 /* CBLModelProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBLModelProxy.h; sourceTree = "<group>"; };
+		A3BBBFA617F78678000EE582 /* CBLModelProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBLModelProxy.m; sourceTree = "<group>"; };
+		A3BBBFA917F78681000EE582 /* NSErrorProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSErrorProxy.h; sourceTree = "<group>"; };
+		A3BBBFAA17F78681000EE582 /* NSErrorProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSErrorProxy.m; sourceTree = "<group>"; };
+		A3BBBFAB17F78681000EE582 /* NSURLProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSURLProxy.h; sourceTree = "<group>"; };
+		A3BBBFAC17F78681000EE582 /* NSURLProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSURLProxy.m; sourceTree = "<group>"; };
+		A3BBBFAD17F78681000EE582 /* NSURLCredentialProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSURLCredentialProxy.h; sourceTree = "<group>"; };
+		A3BBBFAE17F78681000EE582 /* NSURLCredentialProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSURLCredentialProxy.m; sourceTree = "<group>"; };
+		A3BBD56417FE92E7000EE394 /* CouchbaseLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CouchbaseLite.framework; path = Frameworks/CouchbaseLite.framework; sourceTree = "<group>"; };
+		A3BBD56617FE9902000EE394 /* ComCouchbaseCblModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComCouchbaseCblModule.h; sourceTree = "<group>"; };
+		A3BBD56717FE9902000EE394 /* ComCouchbaseCblModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComCouchbaseCblModule.m; sourceTree = "<group>"; };
+		A3BBD56817FE9902000EE394 /* ComCouchbaseCblModuleAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComCouchbaseCblModuleAssets.h; sourceTree = "<group>"; };
+		A3BBD56917FE9902000EE394 /* ComCouchbaseCblModuleAssets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComCouchbaseCblModuleAssets.m; sourceTree = "<group>"; };
+		A3FE1E8A17F7A6E900789421 /* TitaniumUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitaniumUtils.h; sourceTree = "<group>"; };
+		A3FE1E8B17F7A6E900789421 /* TitaniumUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitaniumUtils.m; sourceTree = "<group>"; };
+		A3FE1E9217FAB5C500789421 /* ThreadUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreadUtils.h; sourceTree = "<group>"; };
+		A3FE1E9317FAB5C500789421 /* ThreadUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreadUtils.m; sourceTree = "<group>"; };
+		AA747D9E0F9514B9006C5449 /* ComCouchbaseCbl_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComCouchbaseCbl_Prefix.pch; sourceTree = SOURCE_ROOT; };
+		AACBBE490F95108600F1A2B1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D2AAC07E0554694100DB518D /* libComCouchbaseCbl.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libComCouchbaseCbl.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D2AAC07C0554694100DB518D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3BBD56517FE92E7000EE394 /* CouchbaseLite.framework in Frameworks */,
+				AACBBE4A0F95108600F1A2B1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DFFF38A50411DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2AAC07E0554694100DB518D /* libComCouchbaseCbl.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* CouchbaseLiteTitanium */ = {
+			isa = PBXGroup;
+			children = (
+				08FB77AEFE84172EC02AAC07 /* Classes */,
+				32C88DFF0371C24200C91783 /* Other Sources */,
+				0867D69AFE84028FC02AAC07 /* Frameworks */,
+				034768DFFF38A50411DB9C8B /* Products */,
+			);
+			name = CouchbaseLiteTitanium;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A3BBD56417FE92E7000EE394 /* CouchbaseLite.framework */,
+				AACBBE490F95108600F1A2B1 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		08FB77AEFE84172EC02AAC07 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A3BBD56817FE9902000EE394 /* ComCouchbaseCblModuleAssets.h */,
+				A3BBD56917FE9902000EE394 /* ComCouchbaseCblModuleAssets.m */,
+				A3BBD56617FE9902000EE394 /* ComCouchbaseCblModule.h */,
+				A3BBD56717FE9902000EE394 /* ComCouchbaseCblModule.m */,
+				A3BBBF8417F78636000EE582 /* API */,
+				A3BBBF8317F78632000EE582 /* Model */,
+				A3BBBF8217F7862C000EE582 /* iOS */,
+				A3FE1E8A17F7A6E900789421 /* TitaniumUtils.h */,
+				A3FE1E8B17F7A6E900789421 /* TitaniumUtils.m */,
+				A3FE1E9217FAB5C500789421 /* ThreadUtils.h */,
+				A3FE1E9317FAB5C500789421 /* ThreadUtils.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		32C88DFF0371C24200C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				AA747D9E0F9514B9006C5449 /* ComCouchbaseCbl_Prefix.pch */,
+				24DD6D1B1134B66800162E58 /* titanium.xcconfig */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		A3BBBF8217F7862C000EE582 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				A3BBBFA917F78681000EE582 /* NSErrorProxy.h */,
+				A3BBBFAA17F78681000EE582 /* NSErrorProxy.m */,
+				A3BBBFAB17F78681000EE582 /* NSURLProxy.h */,
+				A3BBBFAC17F78681000EE582 /* NSURLProxy.m */,
+				A3BBBFAD17F78681000EE582 /* NSURLCredentialProxy.h */,
+				A3BBBFAE17F78681000EE582 /* NSURLCredentialProxy.m */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		A3BBBF8317F78632000EE582 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A3BBBFA517F78678000EE582 /* CBLModelProxy.h */,
+				A3BBBFA617F78678000EE582 /* CBLModelProxy.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		A3BBBF8417F78636000EE582 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A3BBBF8517F7866F000EE582 /* CBLManagerProxy.h */,
+				A3BBBF8617F7866F000EE582 /* CBLManagerProxy.m */,
+				A3BBBF8717F7866F000EE582 /* CBLDatabaseProxy.h */,
+				A3BBBF8817F7866F000EE582 /* CBLDatabaseProxy.m */,
+				A3BBBF8917F7866F000EE582 /* CBLDocumentProxy.h */,
+				A3BBBF8A17F7866F000EE582 /* CBLDocumentProxy.m */,
+				A3BBBF8B17F7866F000EE582 /* CBLRevisionProxy.h */,
+				A3BBBF8C17F7866F000EE582 /* CBLRevisionProxy.m */,
+				A3BBBF8D17F7866F000EE582 /* CBLAttachmentProxy.h */,
+				A3BBBF8E17F7866F000EE582 /* CBLAttachmentProxy.m */,
+				A3BBBF8F17F7866F000EE582 /* CBLViewProxy.h */,
+				A3BBBF9017F7866F000EE582 /* CBLViewProxy.m */,
+				A3BBBF9117F7866F000EE582 /* CBLQueryProxy.h */,
+				A3BBBF9217F7866F000EE582 /* CBLQueryProxy.m */,
+				A3BBBF9317F7866F000EE582 /* CBLReplicationProxy.h */,
+				A3BBBF9417F7866F000EE582 /* CBLReplicationProxy.m */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D2AAC07A0554694100DB518D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3BBD56A17FE9902000EE394 /* ComCouchbaseCblModule.h in Headers */,
+				A3BBBFA317F7866F000EE582 /* CBLReplicationProxy.h in Headers */,
+				A3FE1E8C17F7A6E900789421 /* TitaniumUtils.h in Headers */,
+				A3BBD56C17FE9902000EE394 /* ComCouchbaseCblModuleAssets.h in Headers */,
+				AA747D9F0F9514B9006C5449 /* ComCouchbaseCbl_Prefix.pch in Headers */,
+				A3BBBFB117F78681000EE582 /* NSURLProxy.h in Headers */,
+				A3FE1E9417FAB5C500789421 /* ThreadUtils.h in Headers */,
+				A3BBBF9517F7866F000EE582 /* CBLManagerProxy.h in Headers */,
+				A3BBBFB317F78681000EE582 /* NSURLCredentialProxy.h in Headers */,
+				A3BBBF9917F7866F000EE582 /* CBLDocumentProxy.h in Headers */,
+				A3BBBF9F17F7866F000EE582 /* CBLViewProxy.h in Headers */,
+				A3BBBFA717F78678000EE582 /* CBLModelProxy.h in Headers */,
+				A3BBBFAF17F78681000EE582 /* NSErrorProxy.h in Headers */,
+				A3BBBFA117F7866F000EE582 /* CBLQueryProxy.h in Headers */,
+				A3BBBF9717F7866F000EE582 /* CBLDatabaseProxy.h in Headers */,
+				A3BBBF9D17F7866F000EE582 /* CBLAttachmentProxy.h in Headers */,
+				A3BBBF9B17F7866F000EE582 /* CBLRevisionProxy.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D2AAC07D0554694100DB518D /* CouchbaseLiteTitanium */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "CouchbaseLiteTitanium" */;
+			buildPhases = (
+				D2AAC07A0554694100DB518D /* Headers */,
+				D2AAC07B0554694100DB518D /* Sources */,
+				D2AAC07C0554694100DB518D /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CouchbaseLiteTitanium;
+			productName = CouchbaseLiteTitanium;
+			productReference = D2AAC07E0554694100DB518D /* libComCouchbaseCbl.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+			};
+			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "CouchbaseLiteTitanium" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 0867D691FE84028FC02AAC07 /* CouchbaseLiteTitanium */;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D2AAC07D0554694100DB518D /* CouchbaseLiteTitanium */,
+				24416B8111C4CA220047AFDD /* Build & Test */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24416B8011C4CA220047AFDD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here\n\npython \"${TITANIUM_SDK}/titanium.py\" run --dir=\"${PROJECT_DIR}\"\nexit $?\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D2AAC07B0554694100DB518D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3BBBF9A17F7866F000EE582 /* CBLDocumentProxy.m in Sources */,
+				A3BBBFB217F78681000EE582 /* NSURLProxy.m in Sources */,
+				A3BBBFB417F78681000EE582 /* NSURLCredentialProxy.m in Sources */,
+				A3BBBFA417F7866F000EE582 /* CBLReplicationProxy.m in Sources */,
+				A3BBD56B17FE9902000EE394 /* ComCouchbaseCblModule.m in Sources */,
+				A3FE1E9517FAB5C500789421 /* ThreadUtils.m in Sources */,
+				A3FE1E8D17F7A6E900789421 /* TitaniumUtils.m in Sources */,
+				A3BBBFA217F7866F000EE582 /* CBLQueryProxy.m in Sources */,
+				A3BBBF9817F7866F000EE582 /* CBLDatabaseProxy.m in Sources */,
+				A3BBD56D17FE9902000EE394 /* ComCouchbaseCblModuleAssets.m in Sources */,
+				A3BBBF9C17F7866F000EE582 /* CBLRevisionProxy.m in Sources */,
+				A3BBBF9617F7866F000EE582 /* CBLManagerProxy.m in Sources */,
+				A3BBBF9E17F7866F000EE582 /* CBLAttachmentProxy.m in Sources */,
+				A3BBBFA017F7866F000EE582 /* CBLViewProxy.m in Sources */,
+				A3BBBFB017F78681000EE582 /* NSErrorProxy.m in Sources */,
+				A3BBBFA817F78678000EE582 /* CBLModelProxy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		24416B8511C4CA280047AFDD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2AAC07D0554694100DB518D /* CouchbaseLiteTitanium */;
+			targetProxy = 24416B8411C4CA280047AFDD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB921F08733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DSTROOT = /tmp/ComCouchbaseCbl.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/wcarter/iOS/test/CouchbaseLiteTitanium,
+					/Users/wcarter/iOS/test/CouchbaseLiteTitanium/Frameworks,
+					"/Users/wcarter/iOS/couchbase-lite-titanium-ios/Frameworks",
+					"/Users/wcarter/iOS/couchbase-lite-titanium-ios",
+				);
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ComCouchbaseCbl_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				GCC_WARN_MISSING_PARENTHESES = NO;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = /usr/local/lib;
+				LIBRARY_SEARCH_PATHS = (
+					/Users/wcarter/iOS/test/CouchbaseLiteTitanium,
+					"/Users/wcarter/iOS/couchbase-lite-titanium-ios/Frameworks",
+				);
+				OTHER_CFLAGS = (
+					"-DDEBUG",
+					"-DTI_POST_1_2",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = ComCouchbaseCbl;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		1DEB922008733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/ComCouchbaseCbl.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/wcarter/iOS/test/CouchbaseLiteTitanium,
+					/Users/wcarter/iOS/test/CouchbaseLiteTitanium/Frameworks,
+					"/Users/wcarter/iOS/couchbase-lite-titanium-ios/Frameworks",
+					"/Users/wcarter/iOS/couchbase-lite-titanium-ios",
+				);
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ComCouchbaseCbl_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				GCC_WARN_MISSING_PARENTHESES = NO;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = /usr/local/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				LIBRARY_SEARCH_PATHS = (
+					/Users/wcarter/iOS/test/CouchbaseLiteTitanium,
+					"/Users/wcarter/iOS/couchbase-lite-titanium-ios/Frameworks",
+				);
+				OTHER_CFLAGS = "-DTI_POST_1_2";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = ComCouchbaseCbl;
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+		1DEB922308733DC00010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DSTROOT = /tmp/ComCouchbaseCbl.dst;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ComCouchbaseCbl_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				GCC_WARN_MISSING_PARENTHESES = NO;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = /usr/local/lib;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"-DDEBUG",
+					"-DTI_POST_1_2",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = ComCouchbaseCbl;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		1DEB922408733DC00010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/ComCouchbaseCbl.dst;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = ComCouchbaseCbl_Prefix.pch;
+				GCC_PREPROCESSOR_DEFINITIONS = "TI_VERSION=$(TI_VERSION)";
+				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
+				GCC_VERSION = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = NO;
+				GCC_WARN_MISSING_PARENTHESES = NO;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_STRICT_SELECTOR_MATCH = NO;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VALUE = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				INSTALL_PATH = /usr/local/lib;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
+				OTHER_CFLAGS = "-DTI_POST_1_2";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = ComCouchbaseCbl;
+				RUN_CLANG_STATIC_ANALYZER = NO;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+		24416B8211C4CA220047AFDD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "Build & test";
+			};
+			name = Debug;
+		};
+		24416B8311C4CA220047AFDD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24DD6D1B1134B66800162E58 /* titanium.xcconfig */;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PRODUCT_NAME = "Build & test";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "CouchbaseLiteTitanium" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB921F08733DC00010E9CD /* Debug */,
+				1DEB922008733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "CouchbaseLiteTitanium" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB922308733DC00010E9CD /* Debug */,
+				1DEB922408733DC00010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		24416B8A11C4CA520047AFDD /* Build configuration list for PBXAggregateTarget "Build & Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24416B8211C4CA220047AFDD /* Debug */,
+				24416B8311C4CA220047AFDD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}
