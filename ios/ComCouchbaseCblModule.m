@@ -147,45 +147,6 @@
     } onNewThread:YES];
 }
 
-//-(CBLManagerProxy *)createManager:(id)args
-//{
-//    CBLManagerProxy * manager;
-//    NSError * error;
-//    
-//    if ([args count] == 0) {
-//        manager = [CBLManagerProxy proxyWithDelegate:[[CBLManager alloc] init]];
-//    } else if ([args count] == 2) {
-//        NSString * directory;
-//        ENSURE_ARG_OR_NIL_AT_INDEX(directory, args, 0, NSString);
-//        NSDictionary * optionsArgs;
-//        ENSURE_ARG_OR_NIL_AT_INDEX(optionsArgs, args, 1, NSDictionary);
-//        struct CBLManagerOptions options;
-//        options.readOnly = ((NSNumber *)optionsArgs[@"readOnly"]).boolValue;
-//        options.noReplicator = ((NSNumber *)optionsArgs[@"noReplicator"]).boolValue;
-//        
-//        NSError * error;
-//        manager = [CBLManagerProxy proxyWithDelegate:[[CBLManager alloc] initWithDirectory:directory options:&options error:&error]];
-//        
-//        if (!manager) {
-//            [TitaniumUtils throwError:error withProxy:self];
-//        }
-//    }
-//    
-//    NSThread * thread = [NSThread currentThread];
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//        [self performSelector:@selector(runCurrentRunLoop:) onThread:thread withObject:nil waitUntilDone:NO];
-//    });
-//    
-//    return manager;
-//}
-//
-//-(void)runCurrentRunLoop:(id)args
-//{
-//    while (true) {
-//        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
-//    }
-//}
-
 #pragma mark ATTACHMENT:
 
 -(CBLAttachmentProxy *)createAttachment:(id)args
