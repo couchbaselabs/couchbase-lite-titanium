@@ -203,7 +203,7 @@
 
 - (void)change:(NSNotification *)notification {
     TiThreadPerformOnMainThread(^{
-        [self fireEvent:kCBLDatabaseProxyChangeEvent withObject:nil propagate:YES];
+        [self fireEvent:kCBLDatabaseProxyChangeEvent withObject:notification.userInfo propagate:YES];
     }, NO);
 }
 
