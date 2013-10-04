@@ -530,6 +530,28 @@
     }, _thread);
 }
 
+// NOTE: Create method for Replication ctor.
+-(CBLReplicationProxy *)createPullReplication:(id)args
+{
+    return invoke_block_on_thread(^id{
+        NSString * source;
+        ENSURE_ARG_OR_NIL_AT_INDEX(source, args, 0, NSString);
+        
+        return [CBLReplicationProxy proxyWithDelegate:[[CBLReplication alloc] initPullFromSourceURL:[NSURL URLWithString:source] toDatabase:self.delegate]];
+    }, _thread);
+}
+
+// NOTE: Create method for Replication ctor.
+-(CBLReplicationProxy *)createPushReplication:(id)args
+{
+    return invoke_block_on_thread(^id{
+        NSString * target;
+        ENSURE_ARG_OR_NIL_AT_INDEX(target, args, 0, NSString);
+        
+        return [CBLReplicationProxy proxyWithDelegate:[[CBLReplication alloc] initPushFromDatabase:self.delegate toTargetURL:[NSURL URLWithString:target]]];
+    }, _thread);
+}
+
 
 #pragma mark - MODEL:
 
