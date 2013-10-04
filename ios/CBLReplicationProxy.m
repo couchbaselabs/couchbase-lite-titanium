@@ -79,7 +79,7 @@
     }, _thread);
 }
 
--(NSNumber *)pull
+-(NSNumber *)isPull
 {
     return invoke_block_on_thread(^id{
         return [NSNumber numberWithBool:(_delegate.pull == true)];
@@ -124,7 +124,7 @@
     }, _thread);
 }
 
--(void)setContinuous:(NSNumber *)continuous
+-(void)setIsContinuous:(NSNumber *)continuous
 {
     void_block_on_thread(^{
         _delegate.continuous = continuous.boolValue;
