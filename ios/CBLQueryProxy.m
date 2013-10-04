@@ -354,7 +354,7 @@
 {
     if (object == _delegate) {
         TiThreadPerformOnMainThread(^{
-            [self fireEvent:kCBLLiveQueryProxyChangeEvent withObject:nil propagate:YES];
+            [self fireEvent:kCBLLiveQueryProxyChangeEvent withObject:{@"property":keyPath} propagate:YES];
         }, NO);
     }
 }
