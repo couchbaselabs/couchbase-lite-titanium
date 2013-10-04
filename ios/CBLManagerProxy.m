@@ -95,7 +95,8 @@
 //- (instancetype) initWithDirectory: (NSString*)directory
 //                           options: (const CBLManagerOptions*)options
 //                             error: (NSError**)outError;
-//
+
+// TODO: Needed?
 //+ (NSString*) defaultDirectory;
 
 -(void)close:(id)args
