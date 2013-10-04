@@ -428,9 +428,12 @@
     }, _thread);
 }
 
--(CBLValidationBlockProxy *)validationNamed:(NSString*)validationName
+-(CBLValidationBlockProxy *)getValidation:(id)args
 {
     return invoke_block_on_thread(^id{
+        NSString * validationName;
+        ENSURE_ARG_OR_NIL_AT_INDEX(validationName, args, 0, NSString);
+        
         return [CBLValidationBlockProxy proxyWithDelegate:[_delegate validationNamed:validationName]];
     }, _thread);
 }
@@ -458,9 +461,12 @@
     }, _thread);
 }
 
--(CBLFilterBlockProxy *)filterNamed:(NSString*)filterName
+-(CBLFilterBlockProxy *)getFilter:(id)args
 {
     return invoke_block_on_thread(^id{
+        NSString * filterName;
+        ENSURE_ARG_OR_NIL_AT_INDEX(filterName, args, 0, NSString);
+        
         return [CBLFilterBlockProxy proxyWithDelegate:[_delegate filterNamed:filterName]];
     }, _thread);
 }
