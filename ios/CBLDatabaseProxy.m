@@ -603,7 +603,7 @@
 @end
 
 
-// NOTE: Defined in Module
+// NOTE: Exposed as abstracted CHANGE_EVENT.
 //extern NSString* const kCBLDatabaseChangeNotification;
 
 
