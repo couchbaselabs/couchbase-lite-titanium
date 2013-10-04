@@ -20,6 +20,12 @@ var database = manager.createDatabase("checkers");
 
 //database.deleteDatabase();
 
+database.addEventListener(database.CHANGE_EVENT, function(e) {
+	var query = e.source.queryAllDocuments;
+	
+	label.text = "Documents: " + query.rows.count;
+});
+
 var userId = "test1";
 var userDocId = "user:" + userId;
 var voteDocId = "vote:" + userId;
@@ -29,13 +35,13 @@ var replications = database.replicate(SYNC_URL, true);
 for (var i=0; i<replications.length; i++) {
 	var replication = replications[i];
 	
-	replication.continuous = true;
+	replication.isContinuous = true;
 	// NOTE: There are issues w/ persistent=true during cold-start.
-    replication.persistent = true;
+    replication.isPersistent = true;
     
-    if(replication.pull) {
+    if(replication.isPull) {
         replication.filter = "sync_gateway/bychannel";
-        replication.query_params = {"channels":"game"};
+        replication.queryParams = {"channels":"game"};
     } else {
     	database.defineFilter("pushItems", function(properties, params) {
     		return (properties._id == userDocId || properties._id == voteDocId);
@@ -85,7 +91,7 @@ var liveQuery = gamesByStartTime.createQuery().toLiveQuery();
 liveQuery.limit = 1;
 liveQuery.descending = true;
 liveQuery.addEventListener(liveQuery.CHANGE_EVENT, function(e) {
-	Ti.API.info("### liveQuery.rowschange: " + e.source + ", " + e.source.rows + "[" + e.source.rows.count + "]");
+	Ti.API.info("### liveQuery.change: " + e.source + ", " + e.source.rows + "[" + e.source.rows.count + "]");
 });
 
 /*var query = database.queryAllDocuments;
@@ -101,19 +107,13 @@ while (row) {
 	CBLite.runCurrentRunLoop();
 }, 100);*/
 
-var i = 0;
+/*var i = 0;
 setInterval(function() {
 	var query = database.queryAllDocuments;
 	var rows = query.rows;
 	
 	label.text = rows.count + " - " + ++i;
-	
-	/*var row = rows.nextRow;
-	while (row) {
-		Ti.API.info(row.documentID);
-		row = rows.nextRow;
-	}*/
-}, 1000);
+}, 1000);*/
 
 /*setInterval(function() {
 	Ti.API.info("runCurrentRunLoop");
