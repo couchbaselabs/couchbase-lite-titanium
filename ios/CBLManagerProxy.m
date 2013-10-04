@@ -9,7 +9,6 @@
 #import "ThreadUtils.h"
 #import "CBLManagerProxy.h"
 #import "CBLDatabaseProxy.h"
-#import "NSURLProxy.h"
 #import "NSErrorProxy.h"
 
 @interface CBLManagerProxyCreateArgs : NSObject
@@ -202,10 +201,10 @@
     }, _thread);
 }
 
--(NSURLProxy *)internalUrl
+-(NSString *)internalUrl
 {
     return invoke_block_on_thread(^id{
-        return [NSURLProxy proxyWithDelegate:_delegate.internalURL];
+        return _delegate.internalURL.absoluteString;
     }, _thread);
 }
 

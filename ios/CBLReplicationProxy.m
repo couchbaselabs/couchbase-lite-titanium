@@ -9,7 +9,6 @@
 #import "TitaniumUtils.h"
 #import "CBLReplicationProxy.h"
 #import "CBLDatabaseProxy.h"
-#import "NSURLProxy.h"
 #import "NSURLCredentialProxy.h"
 #import "NSErrorProxy.h"
 
@@ -72,10 +71,10 @@
     }, _thread);
 }
 
--(NSURLProxy *)remoteUrl
+-(NSString *)remoteUrl
 {
     return invoke_block_on_thread(^id{
-        return [NSURLProxy proxyWithDelegate:_delegate.remoteURL];
+        return _delegate.remoteURL.absoluteString;
     }, _thread);
 }
 
@@ -244,10 +243,10 @@
     }, _thread);
 }
 
--(NSURLProxy *)personaOrigin
+-(NSString *)personaOrigin
 {
     return invoke_block_on_thread(^id{
-        return [NSURLProxy proxyWithDelegate:_delegate.personaOrigin];
+        return _delegate.personaOrigin.absoluteString;
     }, _thread);
 }
 

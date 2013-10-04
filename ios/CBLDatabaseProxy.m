@@ -8,7 +8,6 @@
 #import "ThreadUtils.h"
 #import "TitaniumUtils.h"
 #import "CBLDatabaseProxy.h"
-#import "NSURLProxy.h"
 #import "NSErrorProxy.h"
 #import "CBLManagerProxy.h"
 #import "CBLDocumentProxy.h"
@@ -236,10 +235,10 @@
     }, _thread);
 }
 
--(NSURLProxy *)internalUrl
+-(NSString *)internalUrl
 {
     return invoke_block_on_thread(^id{
-        return [NSURLProxy proxyWithDelegate:_delegate.internalURL];
+        return _delegate.internalURL.absoluteString;
     }, _thread);
 }
 

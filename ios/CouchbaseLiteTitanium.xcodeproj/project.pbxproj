@@ -43,8 +43,6 @@
 		A3BBBFA817F78678000EE582 /* CBLModelProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3BBBFA617F78678000EE582 /* CBLModelProxy.m */; };
 		A3BBBFAF17F78681000EE582 /* NSErrorProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = A3BBBFA917F78681000EE582 /* NSErrorProxy.h */; };
 		A3BBBFB017F78681000EE582 /* NSErrorProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3BBBFAA17F78681000EE582 /* NSErrorProxy.m */; };
-		A3BBBFB117F78681000EE582 /* NSURLProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = A3BBBFAB17F78681000EE582 /* NSURLProxy.h */; };
-		A3BBBFB217F78681000EE582 /* NSURLProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3BBBFAC17F78681000EE582 /* NSURLProxy.m */; };
 		A3BBBFB317F78681000EE582 /* NSURLCredentialProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = A3BBBFAD17F78681000EE582 /* NSURLCredentialProxy.h */; };
 		A3BBBFB417F78681000EE582 /* NSURLCredentialProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = A3BBBFAE17F78681000EE582 /* NSURLCredentialProxy.m */; };
 		A3BBD56A17FE9902000EE394 /* ComCouchbaseCblModule.h in Headers */ = {isa = PBXBuildFile; fileRef = A3BBD56617FE9902000EE394 /* ComCouchbaseCblModule.h */; };
@@ -92,8 +90,6 @@
 		A3BBBFA617F78678000EE582 /* CBLModelProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBLModelProxy.m; sourceTree = "<group>"; };
 		A3BBBFA917F78681000EE582 /* NSErrorProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSErrorProxy.h; sourceTree = "<group>"; };
 		A3BBBFAA17F78681000EE582 /* NSErrorProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSErrorProxy.m; sourceTree = "<group>"; };
-		A3BBBFAB17F78681000EE582 /* NSURLProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSURLProxy.h; sourceTree = "<group>"; };
-		A3BBBFAC17F78681000EE582 /* NSURLProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSURLProxy.m; sourceTree = "<group>"; };
 		A3BBBFAD17F78681000EE582 /* NSURLCredentialProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSURLCredentialProxy.h; sourceTree = "<group>"; };
 		A3BBBFAE17F78681000EE582 /* NSURLCredentialProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSURLCredentialProxy.m; sourceTree = "<group>"; };
 		A3BBD56617FE9902000EE394 /* ComCouchbaseCblModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComCouchbaseCblModule.h; sourceTree = "<group>"; };
@@ -182,8 +178,6 @@
 			children = (
 				A3BBBFA917F78681000EE582 /* NSErrorProxy.h */,
 				A3BBBFAA17F78681000EE582 /* NSErrorProxy.m */,
-				A3BBBFAB17F78681000EE582 /* NSURLProxy.h */,
-				A3BBBFAC17F78681000EE582 /* NSURLProxy.m */,
 				A3BBBFAD17F78681000EE582 /* NSURLCredentialProxy.h */,
 				A3BBBFAE17F78681000EE582 /* NSURLCredentialProxy.m */,
 			);
@@ -234,7 +228,6 @@
 				A3FE1E8C17F7A6E900789421 /* TitaniumUtils.h in Headers */,
 				A3BBD56C17FE9902000EE394 /* ComCouchbaseCblModuleAssets.h in Headers */,
 				AA747D9F0F9514B9006C5449 /* ComCouchbaseCbl_Prefix.pch in Headers */,
-				A3BBBFB117F78681000EE582 /* NSURLProxy.h in Headers */,
 				A3FE1E9417FAB5C500789421 /* ThreadUtils.h in Headers */,
 				A3BBBF9517F7866F000EE582 /* CBLManagerProxy.h in Headers */,
 				A3BBBFB317F78681000EE582 /* NSURLCredentialProxy.h in Headers */,
@@ -320,7 +313,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3BBBF9A17F7866F000EE582 /* CBLDocumentProxy.m in Sources */,
-				A3BBBFB217F78681000EE582 /* NSURLProxy.m in Sources */,
 				A3BBBFB417F78681000EE582 /* NSURLCredentialProxy.m in Sources */,
 				A3BBBFA417F7866F000EE582 /* CBLReplicationProxy.m in Sources */,
 				A3BBD56B17FE9902000EE394 /* ComCouchbaseCblModule.m in Sources */,

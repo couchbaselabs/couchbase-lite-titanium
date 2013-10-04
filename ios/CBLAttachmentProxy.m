@@ -10,7 +10,6 @@
 #import "CBLAttachmentProxy.h"
 #import "CBLRevisionProxy.h"
 #import "CBLDocumentProxy.h"
-#import "NSURLProxy.h"
 #import "TiBlob.h"
 
 @implementation CBLAttachmentProxy
@@ -96,10 +95,10 @@
     }, _thread);
 }
 
--(NSURLProxy *)bodyUrl
+-(NSString *)bodyUrl
 {
     return invoke_block_on_thread(^id{
-        return [NSURLProxy proxyWithDelegate:_delegate.bodyURL];
+        return _delegate.bodyURL.absoluteString;
     }, _thread);
 }
 
