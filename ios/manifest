@@ -2,12 +2,12 @@
 # this is your module manifest and used by Titanium
 # during compilation, packaging, distribution, etc.
 #
-version: 0.1
+version: 1.0
 apiversion: 2
-description: My module
-author: Your Name
+description: Couchbase Lite
+author: Couchbase, Inc.
 license: Specify your license
-copyright: Copyright (c) 2013 by Your Company
+copyright: Copyright (c) 2013 by Couchbase, Inc.
 
 
 # these should not be edited

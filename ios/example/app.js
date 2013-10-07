@@ -19,6 +19,7 @@ var manager = CBLite.createManager();
 var database = manager.createDatabase("checkers");
 
 // Listen for Database changes.
+label.text = "Documents: " + database.queryAllDocuments.rows.count;
 database.addEventListener(database.CHANGE_EVENT, function(e) {
     var query = e.source.queryAllDocuments;
     label.text = "Documents: " + query.rows.count;
