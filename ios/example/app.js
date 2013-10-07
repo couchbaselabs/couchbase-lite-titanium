@@ -18,13 +18,20 @@ var CBLite = require('com.couchbase.cbl');
 var manager = CBLite.createManager();
 var database = manager.createDatabase("checkers");
 
+// Listen for Database changes.
 database.addEventListener(database.CHANGE_EVENT, function(e) {
     var query = e.source.queryAllDocuments;
-    
     label.text = "Documents: " + query.rows.count;
 });
 
-var userId = "test1";
+// Get/Create unique user id.
+var userId = Ti.App.Properties.getString('userId');
+if (!userId) {
+    userId = Titanium.Platform.createUUID();
+    Ti.App.Properties.setString('userId', userId);
+}
+
+// Build document ids.
 var userDocId = "user:" + userId;
 var voteDocId = "vote:" + userId;
 
@@ -55,7 +62,7 @@ for (var i=0; i<replications.length; i++) {
     }
 }
 
-// Team
+// Update Team doc.
 var userDoc = database.getDocument(userDocId);
 if (!userDoc.currentRevision) userDoc.putProperties({});
 userDoc.update(function(newRevision) {
@@ -66,7 +73,7 @@ userDoc.update(function(newRevision) {
     return true;
 });
 
-// Vote
+// Update Vote doc.
 var voteDoc = database.getDocument(voteDocId);
 if (!voteDoc.currentRevision) voteDoc.putProperties({});
 voteDoc.update(function(newRevision) {
