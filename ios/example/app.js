@@ -18,8 +18,6 @@ var CBLite = require('com.couchbase.cbl');
 var manager = CBLite.createManager();
 var database = manager.createDatabase("checkers");
 
-//database.deleteDatabase();
-
 database.addEventListener(database.CHANGE_EVENT, function(e) {
     var query = e.source.queryAllDocuments;
     
@@ -31,12 +29,18 @@ var userDocId = "user:" + userId;
 var voteDocId = "vote:" + userId;
 
 // Replicators
+//
+// BUG: There are issues w/ replications during cold-start.
+// https://github.com/couchbase/couchbase-lite-ios/issues/150
+// 
+// Setting isPersistent=true causes the most issues.To work
+// around this you can remove replication config (i.e. replicate
+// everything) or run a few times until the exceptions stop.
 var replications = database.replicate(SYNC_URL, true);
 for (var i=0; i<replications.length; i++) {
     var replication = replications[i];
     
     replication.isContinuous = true;
-    // NOTE: There are issues w/ persistent=true during cold-start.
     replication.isPersistent = true;
     
     if(replication.isPull) {
