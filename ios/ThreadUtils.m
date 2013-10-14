@@ -8,20 +8,29 @@
 
 #import "ThreadUtils.h"
 
-@interface ThreadUtilsValueArgs : NSObject
+// Invoke args.
+@interface ThreadUtilsInvokeArgs : NSObject
 
 @property (readwrite) InvokeBlock invoke;
 @property (readwrite,retain) id result;
 
 @end
-@implementation ThreadUtilsValueArgs @end
+@implementation ThreadUtilsInvokeArgs
+
+-(void)dealloc
+{
+    [_result release];
+    
+    [super dealloc];
+}
+
+@end
 
 id invoke_block_on_thread(InvokeBlock block, NSThread * thread)
 {
     if ([NSThread currentThread] != thread) {
-        ThreadUtilsValueArgs * args = [[ThreadUtilsValueArgs alloc] init];
+        ThreadUtilsInvokeArgs * args = [[ThreadUtilsInvokeArgs alloc] init];
         args.invoke = block;
-        
         [ThreadUtils.class performSelector:@selector(invokeBlock:) onThread:thread withObject:args waitUntilDone:YES];
         
         return [args.result autorelease];
@@ -41,7 +50,7 @@ void void_block_on_thread(VoidBlock block, NSThread * thread)
 
 @implementation ThreadUtils
 
-+(void)invokeBlock:(ThreadUtilsValueArgs *)args
++(void)invokeBlock:(ThreadUtilsInvokeArgs *)args
 {
     args.result = args.invoke();
 }
