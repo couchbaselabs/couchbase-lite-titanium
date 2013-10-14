@@ -25,4 +25,4 @@
 //
 // IMPORTANT NOTE: always use $(inherited) in your overrides
 //
-OTHER_LDFLAGS=$(inherited) -F"/Users/wcarter/iOS/couchbase-lite-titanium/ios/Frameworks/" -framework CouchbaseLite
+OTHER_LDFLAGS=$(inherited) -F"/Users/Shared" -framework CouchbaseLite
