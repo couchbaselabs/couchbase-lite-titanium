@@ -354,7 +354,7 @@
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    if (object == _delegate) {
+    if (object == _delegate && [keyPath isEqualToString:@"rows"]) {
         TiThreadPerformOnMainThread(^{
             [self fireEvent:kCBLLiveQueryProxyChangeEvent withObject:@{@"property":keyPath} propagate:YES];
         }, NO);
