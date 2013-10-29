@@ -81,7 +81,7 @@
 -(void)runCurrentRunLoop
 {
     while (!_closed) {
-        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
+        [[NSRunLoop currentRunLoop] run];
     }
 }
 
