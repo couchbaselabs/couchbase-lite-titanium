@@ -60,53 +60,8 @@ var foodQuery = foodByType.createQuery();
 var foodLiveQuery = foodQuery.toLiveQuery();
 foodLiveQuery.start();
 foodLiveQuery.addEventListener(foodLiveQuery.CHANGE_EVENT, function(e) {
-    // BUG: There are issues w/ queries returning a row enumerator that
-    // does not enumerate correctly.  For now we will just use all the
-    // docs but usually this would be the event source's rows
-    // i.e. showFood(e.source.rows);
-    //
-    // https://github.com/couchbase/couchbase-lite-ios/issues/157
-    //
-    showFood(database.queryAllDocuments.rows);
+    showFood(e.source.rows);
 });
-
-function showFood(rows) {
-    var sections = {};
-    
-    var i=1;
-    var row = rows.nextRow;
-    while (row) {
-        Ti.API.info('CBL: Show food[' + i + '/' + rows.count + ']: ' + row.documentId);
-        
-        var properties = row.document.properties;
-        
-        // Get unique section.
-        var sectionTitle = properties.type;
-        var section = sections[sectionTitle];
-        if (!section) {
-            section = Ti.UI.createListSection({
-                headerTitle:sectionTitle
-            });
-            
-            sections[sectionTitle] = section;
-        }
-        
-        // Add item to section.
-        section.appendItems([
-            {properties: {title:properties.name}}
-        ]);
-        
-        i++;
-        row = rows.nextRow;
-    }
-    
-    var sectionsArray = [];
-    for (var section in sections) {
-        sectionsArray.push(sections[section]);
-    }
-    
-    listView.sections = sectionsArray;
-}
 
 // Init data on first run.
 if (database.queryAllDocuments.rows.count == 0) {
@@ -139,4 +94,41 @@ if (database.queryAllDocuments.rows.count == 0) {
             return true;
         });
     }
+}
+
+function showFood(rows) {
+    var sections = {};
+    
+    var i=1; row = rows.nextRow;
+    while (row) {
+        Ti.API.info('CBL: Show food[' + i + '/' + rows.count + ']: ' + row.documentId);
+        
+        var properties = row.document.properties;
+        
+        // Get unique section.
+        var sectionTitle = properties.type;
+        var section = sections[sectionTitle];
+        if (!section) {
+            section = Ti.UI.createListSection({
+                headerTitle:sectionTitle
+            });
+            
+            sections[sectionTitle] = section;
+        }
+        
+        // Add item to section.
+        section.appendItems([
+            {properties: {title:properties.name}}
+        ]);
+        
+        i++;
+        row = rows.nextRow;
+    }
+    
+    var sectionsArray = [];
+    for (var section in sections) {
+        sectionsArray.push(sections[section]);
+    }
+    
+    listView.sections = sectionsArray;
 }
