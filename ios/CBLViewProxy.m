@@ -21,19 +21,25 @@
 @property (readonly) CBLMapEmitBlock delegate;
 
 -(void)emit:(id)args;
+-(void)flush;
 
 @end
 
 @implementation CBLMapEmitBlockProxy
 {
     NSThread * _thread;
+    NSMutableArray * _emits;
 }
 
 -(id)initWithDelegate:(CBLMapEmitBlock)delegate
 {
     if (self = [super init]) {
-        _delegate = [delegate copy];
+        // Because we are passed the emit block to use in real-time we don't want to copy.  This is
+        // because, once blocks are copied they freeze it's outside references which is not what we
+        // want.
+        _delegate = delegate;
         _thread = [[NSThread currentThread] retain];
+        _emits = [[NSMutableArray alloc] init];
     }
     
     return self;
@@ -57,20 +63,32 @@
 
 -(void)emit:(id)args
 {
+    id key;
+    ENSURE_ARG_OR_NIL_AT_INDEX(key, args, 0, NSObject);
+    id value;
+    ENSURE_ARG_OR_NIL_AT_INDEX(value, args, 1, NSObject);
+    
+    // We just cache the emits on the current thread and then do the actual emit during
+    // flush().  This allows us to ensure there is no threading or dead-lock risk
+    // during emit() via callbacks.
+    [_emits addObject:[NSArray arrayWithObjects:key, value, nil]];
+}
+
+-(void)flush
+{
     void_block_on_thread(^{
-        id key;
-        ENSURE_ARG_OR_NIL_AT_INDEX(key, args, 0, NSObject);
-        id value;
-        ENSURE_ARG_OR_NIL_AT_INDEX(value, args, 1, NSObject);
+        for (NSArray * emit in _emits) {
+            _delegate(emit[0], emit[1]);
+        }
         
-        _delegate(key, value);
+        [_emits removeAllObjects];
     }, _thread);
 }
 
 -(void)dealloc
 {
-    [_delegate release];
     [_thread release];
+    [_emits release];
     
     [super dealloc];
 }
@@ -274,9 +292,24 @@
     CBLMapBlock map = ^(NSDictionary* doc, void (^emit)(id key, id value)) {
         CBLMapEmitBlockProxy * emitProxy = [CBLMapEmitBlockProxy proxyWithDelegate:emit];
         
+        // Completion flag/lock.
+        __block BOOL complete = NO;
+        NSCondition * waitLock = [[NSCondition alloc] init];
+        [waitLock lock];
+        
         [context.krollContext invokeBlockOnThread:^{
             [callback call:[NSArray arrayWithObjects:doc, emitProxy, nil] thisObject:nil];
+            
+            // Signal completion.
+            complete = YES;
+            [waitLock signal];
         }];
+        
+        // Wait for unlock in callback.  This will ensure the callback has completed before we return.
+        while (!complete) [waitLock wait];
+        
+        // Flush the emits.
+        [emitProxy flush];
     };
     
     return [[map copy] autorelease];
