@@ -266,17 +266,6 @@
     }, _thread);
 }
 
-// TODO: Add to spec?
--(void)putProperties:(id)args
-{
-    void_block_on_thread(^{
-        NSDictionary * properties;
-        ENSURE_ARG_OR_NIL_AT_INDEX(properties, args, 0, NSDictionary);
-        
-        [((NSMutableDictionary *)self.delegate.properties) setValuesForKeysWithDictionary:properties];
-    }, _thread);
-}
-
 // Same as -properties:. Enables "[]" access in Xcode 4.4+
 //- (void) setObject: (id)object forKeyedSubscript: (NSString*)key;
 
