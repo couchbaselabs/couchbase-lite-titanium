@@ -86,10 +86,10 @@ if (database.queryAllDocuments.rows.count == 0) {
         foodDoc.update(function(newRevision) {
             Ti.API.info('CBL: Add document: ' + newRevision.document.documentId);
             
-            newRevision.putProperties({
-                'type':food[0],
-                'name':food[1]
-            });
+            var properties = newRevision.properties;
+            properties['type'] = food[0];
+            properties['name'] = food[1];
+            newRevision.properties = properties;
             
             return true;
         });
