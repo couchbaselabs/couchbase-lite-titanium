@@ -6,3 +6,5 @@ Couchbase Lite module for Titanium. Couchbase Lite iOS 1.0. Couchbase Lite is an
 Install
 -------
 Install the latest [release](https://github.com/couchbaselabs/couchbase-lite-titanium/releases).
+
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/2d0a589169314b179e089f4eb5399b4e "githalytics.com")](http://githalytics.com/couchbaselabs/couchbase-lite-titanium)
