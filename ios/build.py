@@ -160,7 +160,7 @@ def warn(msg):
 	print "[WARN] %s" % msg
 
 def validate_license():
-	c = open(os.path.join(cwd,'LICENSE')).read()
+	c = open(os.path.join(cwd,'../LICENSE')).read()
 	if c.find(module_license_default)!=-1:
 		warn('please update the LICENSE file with your license text before distributing')
 
@@ -245,7 +245,7 @@ def package_module(manifest,mf,config):
 	zip_dir(zf,'assets',modulepath,['.pyc','.js'])
 	zip_dir(zf,'example',modulepath,['.pyc'])
 	zip_dir(zf,'platform',modulepath,['.pyc','.js'])
-	zf.write('LICENSE','%s/LICENSE' % modulepath)
+	zf.write('../LICENSE','%s/LICENSE' % modulepath)
 	zf.write('module.xcconfig','%s/module.xcconfig' % modulepath)
 	exports_file = 'metadata.json'
 	if os.path.exists(exports_file):
